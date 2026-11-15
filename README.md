@@ -1,6 +1,6 @@
 # How to build a multi-region highly available active-active architecture
 
-This self-paced workshop takes to step by step **Building Multi-Region Active-Active (and Active-Passive) solution with morden architecture and polyglot persistent databases**. The web application is a Bookstore, and it can be used as a reference architecture for highly available ecommerce store.
+This self-paced workshop takes you step by step through **Building a Multi-Region Active-Active (and Active-Passive) solution with modern architecture and polyglot persistent databases**. The web application is a Bookstore, and it can be used as a reference architecture for a highly available ecommerce store.
 
 ![Bookstore](images/bookstore.png)
 
@@ -28,13 +28,13 @@ Architecture Overview
 
 ![Architecture diagram](images/architecture_diagram.png)
 
-The architeure includes the following flow:
+The architecture includes the following flow:
 
-1. An Wordpress layer for the book blog posts, using AWS Fargate and Aurora MySQL. (Module 1-1)
-2. An UI layer built using HTML, Javascript (ReactJS) and CSS and hosted directly from AWS S3. An API layer built using Node.js running on AWS Lambda and exposed via Amazon API Gateway. A data layer storing book and order information in DynamoDB and Elasticache. (Module 1-2)
+1. A WordPress layer for the book blog posts, using AWS Fargate and Aurora MySQL. (Module 1-1)
+2. A UI layer built using HTML, JavaScript (ReactJS) and CSS, hosted directly from AWS S3. An API layer built using Node.js running on AWS Lambda and exposed via Amazon API Gateway. A data layer storing book and order information in DynamoDB and ElastiCache. (Module 1-2)
 3. Build the same Wordpress layer in the secondary region. (Module 2-1)
 4. Configure the replication across the regions for Aurora MySQL, S3, and DynamoDB. (Module 2-2)
-5. Deploy the same UI and API layer in Singare. (Module 2-3)
+5. Deploy the same UI and API layer in Singapore. (Module 2-3)
 6. Configure API gateway Custom Domain Name and Route53 Health Check for the failover testing. (Module 3)
 
 For the purposes of this workshop, our failover is focused on the path from our application through API Gateway. 
@@ -44,7 +44,7 @@ failovered in the event of a disaster. All data in DynamoDB, S3, Aurora MySQL wi
 replicated from the primary region to the secondary region ensures that our
 application data will be available when we failover. -->
 
-<details><summary>Application, Database, Infrastructure componets</summary>
+<details><summary>Application, Database, Infrastructure components</summary>
 
 **Application components**
 
@@ -104,7 +104,7 @@ Please check before creating resources to ensure you are in the correct region:
 **Important Note**
 
 In order to conduct this workshop you need, 
-1. your own **laptop** (not a tablet) with Chrome or Firefox browsers. You corporate laptop may have a problem accessing domain .xyz.
+1. your own **laptop** (not a tablet) with Chrome or Firefox browsers. Your corporate laptop may have a problem accessing domain .xyz.
 2. **an AWS Account** with access to use IAM, S3, DynamoDB, Lambda and API Gateway The instructions in this workshop assume **only one student is using a given AWS account at a time**. If you try sharing an account with another student, you'll run into naming conflicts for certain resources - we do not recommend this as there may be unpredictable results or difficult to identify configuration issues.
 3. **AWS Account**: Also if you use the corporate account, you might have permission (IAM) or SCP problems. We need **Administrator access** for the workshop. Please create a new AWS account with IAM Administrator access. 
 4. **VPC**: Also if your corporate account already has 5 VPCs in Ireland and Singapore, you might experience to hit the default **VPC limit of 5**. 
